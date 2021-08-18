@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  background-color: whitesmoke;
+  color: black;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.25rem;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.loader img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-container {
+  margin: 10px 30%;
+}
+
+.image-container img {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.github {
+  font-size: 1.5rem;
+  position: fixed;
+  bottom: 0.75rem;
+  right: 0;
+  cursor: pointer;
+  background-color: rgba(10, 10, 10, 0.25);
+  color: black;
+  padding: 0.5rem 0.5rem 0.3rem;
+  border-radius: 10px 0 0 10px;
+  transform: translateX(12ch);
+  transition: all 0.3s;
+}
+
+.github:hover {
+  transform: translateX(0);
+}
+
+.browse-code-text {
+  margin-left: 0.5rem;
+}
+
+.scroll-to-top {
+  font-size: 2rem;
+  position: fixed;
+  bottom: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-shadow: 0 0.25rem 3rem black;
+}
+
+.scroll-to-top:hover {
+  transform: translate(-50%, -0.3rem);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Media Query: Tablet or smaller */
+@media screen and (max-width: 600px) {
+  .image-container {
+    margin: 10px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0a0a0a;
+    color: white;
+  }
+
+  .loader {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .github {
+    background-color: rgba(245, 245, 245, 0.7);
+  }
+
+  .scroll-to-top {
+    color: black;
+    text-shadow: 0 0.25rem 3rem white;
+  }
+}
