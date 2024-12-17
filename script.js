@@ -1,5 +1,4 @@
 // Register as an Unsplash developer, create a new app and enter the access key here
-const apiKey = 'API_KEY';
 
 const imageContainer = document.querySelector('#image-container');
 const loader = document.querySelector('#loader');
@@ -65,10 +64,17 @@ const displayPhotos = () => {
 const getPhotos = async () => {
   try {
     const response = await fetch(apiUrl);
-    photosArray = await response.json();
-    displayPhotos();
+    if (response.status === 200) {
+      photosArray = await response.json();
+      displayPhotos();
+    } else {
+      const errors = await response.json();
+      errors.errors.forEach(error => {
+        console.error(error);
+      });
+    }
   } catch (error) {
-    // Catch error here
+    console.error(error);
   }
 };
 
