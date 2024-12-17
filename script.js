@@ -1,4 +1,5 @@
 // Register as an Unsplash developer, create a new app and enter the access key here
+const apiKey = 'API_KEY';
 
 const imageContainer = document.querySelector('#image-container');
 const loader = document.querySelector('#loader');
