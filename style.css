@@ -17,6 +17,7 @@ h1 {
   margin-bottom: 15px;
   font-size: 40px;
   letter-spacing: 5px;
+  margin-right: -5px;
 }
 
 /* Loader */
@@ -41,16 +42,20 @@ h1 {
   margin: 10px 30%;
 }
 
+.image-container a {
+  margin-top: 15px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+
 .image-container img {
   width: 100%;
-  margin-top: 10px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Media queries: Large smartphone */
 @media screen and (max-width: 600px) {
   h1 {
-    margin: 25px 15px 15px;
+    margin: 25px 10px 15px 15px;
     font-size: 30px;
   }
 
