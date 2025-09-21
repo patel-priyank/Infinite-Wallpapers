@@ -1,6 +1,6 @@
 # Infinite Wallpapers
 
-Load beautiful wallpapers infinitely from Unsplash with a simple web app.
+Infinite Wallpapers is a simple web app that loads wallpapers from Unsplash with infinite scroll. It uses the Unsplash API to fetch and display images seamlessly.
 
 ## Usage
 
