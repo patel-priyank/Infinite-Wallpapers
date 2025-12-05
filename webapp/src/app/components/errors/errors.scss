@@ -1,0 +1,15 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-inline: 1rem;
+  padding-bottom: 1rem;
+
+  .error {
+    padding: 0.5rem 1rem;
+    background-color: #feecec;
+    color: #5f2120;
+    border: 1px solid #ef5350;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="image-container" [class.padding-bottom]="imageService.images().length > 0">
+  @for (image of imageService.images(); track $index) {
+  <app-image-item
+    [image]="image"
+    [activeImageId]="activeImageId()"
+    (mouseenter)="setActiveImageId(image.id)"
+    (mouseleave)="setActiveImageId(null)"
+    (focus)="setActiveImageId(image.id)"
+    (blur)="setActiveImageId(null)"
+  />
+  }
+</div>

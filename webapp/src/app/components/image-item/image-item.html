@@ -1,0 +1,16 @@
+<a
+  href="{{ image().links.html }}"
+  target="_blank"
+  class="image-link"
+  [class.dimmed]="activeImageId() && activeImageId() !== image().id"
+  id="{{ image().id }}"
+  (focus)="handleFocus()"
+  (blur)="handleBlur()"
+>
+  <img src="{{ image().urls.small }}" alt="{{ image().alt_description }}" />
+
+  <span class="dimensions">
+    @if (image().width > image().height) { Landscape } @else if (image().width < image().height) {
+    Portrait } @else { Square } : {{ image().width }} × {{ image().height }}
+  </span>
+</a>
