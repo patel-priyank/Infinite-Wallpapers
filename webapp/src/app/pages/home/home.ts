@@ -33,4 +33,8 @@ export class Home implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.scrollSub?.unsubscribe();
   }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0 });
+  }
 }
