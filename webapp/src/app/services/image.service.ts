@@ -13,9 +13,12 @@ export class ImageService {
   page = signal(1);
   images = signal(Array(0));
   errors = signal(Array(0));
+  loading = signal(false);
 
   getImages() {
     const url = `${environment.API_URL}/wallpapers/${this.page()}`;
+
+    this.loading.set(true);
 
     this.http
       .get<Array<Image>>(url)
@@ -23,10 +26,13 @@ export class ImageService {
         catchError((err) => {
           this.page.update((current) => current - 1);
           this.errors.set(err.error.errors);
+          this.loading.set(false);
           throw err;
         })
       )
       .subscribe((images) => {
+        this.errors.set([]);
+        this.loading.set(false);
         this.images.update((current) => [...current, ...images]);
       });
   }

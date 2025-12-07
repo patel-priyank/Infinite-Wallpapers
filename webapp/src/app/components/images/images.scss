@@ -3,8 +3,4 @@
   grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 1rem;
   padding-inline: 1rem;
-
-  &.padding-bottom {
-    padding-bottom: 1rem;
-  }
 }

@@ -1,4 +1,4 @@
-<div class="error-container">
+<div class="error-container" [class.padding-bottom]="imageService.errors().length > 0">
   @for (error of imageService.errors(); track $index) {
   <div class="error">{{ error }}</div>
   }
