@@ -45,7 +45,15 @@ app.get('/api/wallpapers', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = Number(process.env.PORT);
+
+if (!process.env.PORT || !Number.isInteger(PORT) || PORT < 1 || PORT > 65535) {
+  throw new Error('Port is undefined or invalid.');
+}
+
+if (!process.env.UNSPLASH_ACCESS_KEY) {
+  throw new Error('Unsplash access key is undefined.');
+}
 
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
