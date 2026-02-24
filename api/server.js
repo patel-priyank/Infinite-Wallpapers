@@ -1,26 +1,14 @@
-import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
+import express from 'express';
 
 dotenv.config();
 
 const app = express();
 
+app.use(cors());
+
 app.use(express.json());
-
-app.use((req, res, next) => {
-  const allowedOrigin = 'https://infinite-wallpapers.vercel.app';
-
-  res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
-  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(204);
-  }
-
-  next();
-});
 
 app.get('/', (req, res) => {
   res.json({ msg: 'api working' });
