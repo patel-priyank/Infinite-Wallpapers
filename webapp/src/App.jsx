@@ -36,7 +36,7 @@ const App = () => {
         if (!response.ok) {
           const errorData = await response.json().catch(() => ({}));
 
-          const errMsg = errorData.errors ? errorData.errors[0] : 'Failed to fetch';
+          const errMsg = errorData.error || 'Failed to fetch';
 
           throw new Error(errMsg);
         }

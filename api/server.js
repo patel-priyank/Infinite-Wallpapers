@@ -33,15 +33,18 @@ app.get('/api/wallpapers', async (req, res) => {
     const unsplashUrl = `https://api.unsplash.com/topics/wallpapers/photos?client_id=${process.env.UNSPLASH_ACCESS_KEY}&page=${page}&per_page=30`;
 
     const response = await fetch(unsplashUrl);
-    const data = await response.json();
+
+    const json = await response.json();
 
     if (!response.ok) {
-      return res.status(response.status || 500).json(data);
+      return res.status(response.status || 500).json({
+        error: json.errors?.[0] || 'Failed to fetch'
+      });
     }
 
-    res.status(200).json(data);
+    res.status(200).json(json);
   } catch (err) {
-    res.status(500).json({ errors: ['Server error'] });
+    res.status(500).json({ error: 'Server error' });
   }
 });
 
