@@ -93,8 +93,8 @@ const App = () => {
               <Card className="card" hoverable cover={<img draggable={false} src={item.data.urls.small} />}>
                 <Meta
                   description={
-                    <Paragraph type="secondary" ellipsis={{ rows: 2 }} style={{ margin: 0 }}>
-                      {item.data.alt_description || 'Wallpaper'}
+                    <Paragraph type="secondary" ellipsis={{ rows: 2 }} style={{ margin: 0, textAlign: 'center' }}>
+                      {item.data.alt_description.toLowerCase() || 'wallpaper'}
                     </Paragraph>
                   }
                 />
