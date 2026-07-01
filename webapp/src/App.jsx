@@ -94,7 +94,7 @@ const App = () => {
                 <Meta
                   description={
                     <Paragraph type="secondary" ellipsis={{ rows: 2 }} style={{ margin: 0, textAlign: 'center' }}>
-                      {item.data.alt_description.toLowerCase() || 'wallpaper'}
+                      {item.data.alt_description?.toLowerCase() || 'wallpaper'}
                     </Paragraph>
                   }
                 />
